@@ -1,13 +1,28 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<h4>Tenant Information</h4>
 
-<a class="button" href="/landmarks/<%= @landmark.id %>/edit">Edit Landmark</a>
-<a class="button" href="/landmarks">Landmarks</a>
+<%= @tenant.name %>
+
+<h4>Apartment</h4>
+<a href="/apartments/<%= @tenant.apartment_id %>">
+<%= @tenant.apartment.address %>
+
+<br>
+
+<button>
+  <a href="/tenants/<%= @tenant.id %>/edit">Edit</a>
+</button>
+
+<br>
+
+<form action="/tenants/<%= @tenant.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="submit" value="Delete"/>
+</form>
+
+<br>
+
+
+<button>
+  <a href="/tenants">Back</a>
+</button>
+

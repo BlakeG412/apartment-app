@@ -1,6 +1,20 @@
-<h2>Create New Landmark</h2>
+<form action="/tenants" method="post">
 
-<!-- add content here -->
 
-<a class="button" href="/landmarks">Landmarks</a>
-<a class="button" href="/">Home</a>
+<label>Tenant:</label>
+<input type="text" name="tenant[name]"/>
+
+<label>Existing Address:</label>
+<select name="apartment[apartment_id]">
+<% @apartments.each do |apt|%>
+  <option value=<%= apt.id %>> <%= apt.address %> </option>
+<% end %>
+</select>
+
+
+<label>New Address:</label>
+<input type="text" name="apartment[address]">
+
+<input type="submit"/>
+
+</form>

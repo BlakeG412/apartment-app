@@ -1,3 +1,9 @@
 class ApplicationController < Sinatra::Base
-  set :views, "app/views"
+  set :method_override, true
+  set :views, 'app/views'
+
+  get "/" do 
+    erb :welcome
+  end
+
 end
